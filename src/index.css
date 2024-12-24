@@ -1,0 +1,316 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Rubik:ital,wght@0,300..900;1,300..900&display=swap');
+
+:root {
+	--primary-color: #772877;
+	--light-primary-color: #BD40BDA2;
+}
+
+* {
+	margin: 0;
+	padding: 0;	
+	box-sizing: border-box;
+}
+
+body, button, input {	
+	font-family: 'Rubik', serif;
+}
+
+::selection {
+	color: white;
+	background-color: var(--light-primary-color);
+}
+
+/* ===================== HEADER ===================== */
+.header {
+	top: 0;
+	position: sticky;
+	padding: 12px 18px;
+	color: white;
+	z-index: 1;
+	background-color: var(--primary-color);
+}
+
+.header h1 {
+	display: inline-block;
+	font-size: 25px;
+	cursor: pointer;
+	user-select: none;
+}
+
+/* ===================== Jelly Bean List ===================== */
+.container {
+  padding: 20px;
+}
+
+.search-bean-form {
+	display: flex;
+	align-items: center;
+	margin-bottom: 20px;
+}
+
+.search-bean-form .search-input {
+	padding: 10px 15px;
+	width: 40%;
+	border-top-left-radius: 20px;
+	border-bottom-left-radius: 20px;
+	border: 1px solid #c9c9c9;
+}
+
+.search-bean-form .search-input:focus,
+.search-bean-form .submit-search-btn:focus {
+	outline: none;
+	border: 1px solid var(--primary-color) !important;
+}
+
+.search-bean-form .clear-search-btn {
+	cursor: pointer;
+	margin: 0 9px 0 -29px;
+	background: none;
+	border: none;
+}
+
+.search-bean-form .submit-search-btn {
+	cursor: pointer;
+	padding: 6px 14px 6px 10px;
+	border-left: none !important;
+	border-top-right-radius: 20px;
+	border-bottom-right-radius: 20px;
+	background: none;
+	border: 1px solid #c9c9c9;
+}
+
+.search-bean-form .submit-search-btn img,
+.search-bean-form .clear-search-btn img {
+	width: 20px;
+}
+
+.jelly-bean-list {
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+	gap: 10px;
+	list-style-type: none;
+  	margin-bottom: 20px;
+}
+
+.jelly-bean-item {
+	padding: 25px 10px 10px 10px;
+	text-align: center;
+	cursor: pointer;
+	transition: 0.2s ease;
+	border-radius: 20px;
+}
+
+.jelly-bean-item:hover {
+	transform: scale(1.05);
+}
+
+.jelly-bean-item img {
+	width: 100%;
+	height: 120px;
+	object-fit: contain;
+}
+
+.jelly-bean-item p {
+	color: white;
+	border-radius: inherit;
+	background-color: rgba(0, 0, 0, 0.3);
+	padding: 7px;
+	font-weight: 500;
+}
+
+/* Skeleton screens */
+.jelly-bean-item.loading {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	padding: 10px;
+	background: #f0f0f0;
+	border-radius: 8px;
+	overflow: hidden;
+}
+
+.loading-image {
+	width: 100px;
+	height: 100px;
+	background: #ddd;
+	border-radius: 50%;
+	animation: pulse 1.5s infinite ease-in-out;
+}
+
+.loading-text {
+	width: 80%;
+	height: 16px;
+	background: #ddd;
+	margin-top: 10px;
+	animation: pulse 1.5s infinite ease-in-out;
+}
+
+.paginator-actions {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+}
+
+.paginator-actions p {
+  font-weight: bold;
+  color: var(--primary-color);
+}
+
+.paginator-actions button {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  padding: 10px 25px;
+  border-radius: 20px;
+  border: none;
+  color: white;
+  font-size: 1rem;
+  background-color: var(--primary-color);
+}
+
+.paginator-actions button img {
+  width: 20px;
+}
+
+.paginator-actions .prev-btn img {
+  margin-right: 8px;
+}
+
+.paginator-actions .next-btn img {
+  margin-left: 8px;
+}
+
+/* ===================== Jelly Bean Details ===================== */
+.jelly-bean-details {
+	display: block;
+	width: 50%;
+	margin: 0 auto;
+	padding: 20px 0 40px 0;
+	text-align: center;
+	line-height: 1.5;
+}
+
+.jelly-bean-details .bean-image {
+	display: block;
+	margin: 20px auto;
+	width: 250px;
+	padding: 25px 10px 10px 10px;
+	text-align: center;
+	transition: 0.2s ease;
+	border-radius: 20px;
+}
+
+.jelly-bean-details .bean-image img {
+	width: 100%;
+	height: 150px;
+	object-fit: contain;
+}
+
+.jelly-bean-details .bean-image .flavor-name {
+	cursor: default;
+	font-weight: bold;
+	font-size: 1.1rem;
+	color: white;
+	border-radius: inherit;
+	background-color: rgba(0, 0, 0, 0.3);
+	padding: 7px;
+}
+
+.jelly-bean-details .bean-info-table {
+	width: 70%;
+	margin: 30px auto;
+	border-collapse: collapse;
+}
+
+.jelly-bean-details .bean-info-table td {
+	padding: 15px;
+	border-top: 1px solid rgba(0, 0, 0, 0.1);
+	border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.jelly-bean-details .bean-info-table td:nth-child(even) {
+	color: var(--primary-color);
+	font-weight: bold;
+}
+
+.jelly-bean-details .ingredients h4 {
+	cursor: default;
+	display: inline-block;
+	padding: 3px 20px;
+	font-weight: normal;
+	border-radius: 20px;
+	margin-bottom: 12px;
+	color: var(--primary-color);
+	border: 1px solid var(--primary-color);
+}
+
+/* General skeleton styles */
+.skeleton {
+    background: linear-gradient(90deg, #e0e0e0 25%, #f5f5f5 50%, #e0e0e0 75%);
+    background-size: 200% 100%;
+    animation: shimmer 1.5s infinite;
+    border-radius: 4px;
+}
+
+/* Specific skeleton dimensions */
+.bean-image-skeleton {
+    width: 250px;
+    height: 200px;
+	display: block;
+	margin: 0 auto;
+    border-radius: 8px;
+    margin-bottom: 10px;
+}
+
+.description-skeleton {
+    width: 100%;
+    height: 40px;
+    margin-bottom: 15px;
+}
+
+.table-label-skeleton {
+    width: 80px;
+    height: 20px;
+}
+
+.table-value-skeleton {
+    width: 50px;
+    height: 20px;
+}
+
+.ingredients-title-skeleton {
+    width: 100px;
+    height: 20px;
+    margin: 15px 0 5px;
+}
+
+.ingredients-content-skeleton {
+    width: 100%;
+    height: 70px;
+}
+
+
+/* ===================== Animations ===================== */
+@keyframes pulse {
+	0% {
+		background-color: #eee;
+	}
+
+	50% {
+		background-color: #ddd;
+	}
+
+	100% {
+		background-color: #eee;
+	}
+}
+
+@keyframes shimmer {
+    from {
+        background-position: 200% 0;
+    }
+    to {
+        background-position: -200% 0;
+    }
+}

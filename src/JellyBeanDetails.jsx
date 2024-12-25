@@ -11,7 +11,7 @@ const JellyBeanDetails = ({ baseUrl }) => {
     useEffect(() => {
         const fetchBeanDetails = async () => {
             try {
-                const response = await fetch(`${baseUrl}/api/beans/${id}`);
+                const response = await fetch(`${baseUrl}/beans/${id}`);
                 if (!response.ok) {
                     throw new Error(`HTTP error! status: ${response.status}`);
                 }

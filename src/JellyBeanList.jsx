@@ -56,8 +56,8 @@ const JellyBeanList = ({ baseUrl }) => {
             try {
                 // When searching fetch all beans
                 const requestUrl = submittedSearchTerm
-                    ? `${baseUrl}/api/beans?pageIndex=1&pageSize=200`
-                    : `${baseUrl}/api/beans?pageIndex=${pageIndex}&pageSize=21`;
+                    ? `${baseUrl}/beans?pageIndex=1&pageSize=200`
+                    : `${baseUrl}/beans?pageIndex=${pageIndex}&pageSize=21`;
                 
                 const response = await fetch(requestUrl);
                 if (!response.ok) {

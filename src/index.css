@@ -24,14 +24,13 @@ body, button, input {
   padding: 20px;
 }
 
-/* ===================== Jelly Bean List ===================== */
-.search-bean-form {
+.search-form {
 	display: flex;
 	align-items: center;
 	margin-bottom: 20px;
 }
 
-.search-bean-form .search-input {
+.search-form .search-input {
 	padding: 10px 15px;
 	width: 25%;
 	border-top-left-radius: 20px;
@@ -39,20 +38,20 @@ body, button, input {
 	border: 1px solid #c9c9c9;
 }
 
-.search-bean-form .search-input:focus,
-.search-bean-form .submit-search-btn:focus {
+.search-form .search-input:focus,
+.search-form .submit-search-btn:focus {
 	outline: none;
 	border: 1px solid var(--primary-color) !important;
 }
 
-.search-bean-form .clear-search-btn {
+.search-form .clear-search-btn {
 	cursor: pointer;
 	margin: 0 9px 0 -29px;
 	background: none;
 	border: none;
 }
 
-.search-bean-form .submit-search-btn {
+.search-form .submit-search-btn {
 	cursor: pointer;
 	padding: 6px 14px 6px 10px;
 	border-left: none !important;
@@ -62,11 +61,12 @@ body, button, input {
 	border: 1px solid #c9c9c9;
 }
 
-.search-bean-form .submit-search-btn img,
-.search-bean-form .clear-search-btn img {
+.search-form .submit-search-btn img,
+.search-form .clear-search-btn img {
 	width: 20px;
 }
 
+/* ===================== Shared Lists ===================== */
 .jelly-bean-list {
 	display: grid;
 	grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));

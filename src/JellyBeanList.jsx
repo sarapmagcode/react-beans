@@ -151,7 +151,7 @@ const JellyBeanList = ({ baseUrl }) => {
     return (
         <div className="container">
             {/* Search Bean */}
-            <form className="search-bean-form" onSubmit={handleSearchSubmit}>
+            <form className="search-form" onSubmit={handleSearchSubmit}>
                 <input
                     className="search-input"
                     name="searchInput"

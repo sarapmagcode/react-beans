@@ -77,16 +77,17 @@ const JellyBeanList = ({ baseUrl }) => {
           const endIndex = startIndex + 21;
           setFilteredBeans(filtered.slice(startIndex, endIndex));
 
-          const adjustedTotalPages = Math.ceil(filtered.length / 21);
+          const adjustedTotalPages = Math.max(Math.ceil(filtered.length / 21), 1);
           setTotalPages(adjustedTotalPages);
-          setIsNextHidden(pageIndex === adjustedTotalPages);
+          setIsNextHidden(pageIndex === adjustedTotalPages || filtered.length === 0);
+          setIsPaginatorHidden(filtered.length === 0);
         } else {
           setFilteredBeans(data.items);
           setTotalPages(data.totalPages);
           setIsNextHidden(pageIndex === data.totalPages);
+          setIsPaginatorHidden(false);
         }
 
-        setIsPaginatorHidden(false);
         setIsPrevHidden(pageIndex === 1);
 
         // Update the URL
@@ -224,7 +225,7 @@ const JellyBeanList = ({ baseUrl }) => {
 };
 
 JellyBeanList.propTypes = {
-  baseUrl: PropTypes.string,
+  baseUrl: PropTypes.string
 };
 
 export default JellyBeanList;

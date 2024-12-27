@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react';
 import { useNavigate, useSearchParams } from 'react-router-dom';
+import PropTypes from 'prop-types';
 import { ArrowLeftIcon, ArrowRightIcon, SearchIcon, CloseIcon } from './Icons';
 
 const RecipeList = ({ baseUrl }) => {
@@ -72,16 +73,17 @@ const RecipeList = ({ baseUrl }) => {
           const endIndex = startIndex + 10;
           setFilteredRecipeList(filtered.slice(startIndex, endIndex));
 
-          const adjustedTotalPages = Math.ceil(filtered.length / 10);
+          const adjustedTotalPages = Math.max(Math.ceil(filtered.length / 10), 1);
           setTotalPages(adjustedTotalPages);
-          setIsNextHidden(pageIndex === adjustedTotalPages);
+          setIsNextHidden(pageIndex === adjustedTotalPages || filtered.length === 0);
+          setIsPaginatorHidden(filtered.length === 0);
         } else {
           setFilteredRecipeList(data.items);
           setTotalPages(data.totalPages);
           setIsNextHidden(pageIndex === data.totalPages);
+          setIsPaginatorHidden(false);
         }
 
-        setIsPaginatorHidden(false);
         setIsPrevHidden(pageIndex === 1);
 
         if (searchParams.get('page') !== pageIndex.toString()) {
@@ -118,10 +120,11 @@ const RecipeList = ({ baseUrl }) => {
     }
   };
 
-  // TODO: Fix pagination of no matching results
   // TODO: Recipe click redirect
 
-  const handleRecipeClick = () => {};
+  const handleRecipeClick = () => {
+    
+  };
 
   const handleSearchSubmit = (e) => {
     e.preventDefault();
@@ -209,6 +212,10 @@ const RecipeList = ({ baseUrl }) => {
       )}
     </div>
   );
+};
+
+RecipeList.propTypes = {
+  baseUrl: PropTypes.string
 };
 
 export default RecipeList;

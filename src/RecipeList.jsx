@@ -122,8 +122,8 @@ const RecipeList = ({ baseUrl }) => {
 
   // TODO: Recipe click redirect
 
-  const handleRecipeClick = () => {
-    
+  const handleRecipeClick = (recipeId) => {
+    navigate(`/recipes/${recipeId}`);
   };
 
   const handleSearchSubmit = (e) => {
@@ -175,8 +175,12 @@ const RecipeList = ({ baseUrl }) => {
       <ul className="recipe-list">
         {filteredRecipeList.length > 0 ? (
           filteredRecipeList.map((recipe) => (
-            <li key={recipe.recipeId} className="recipe-item">
-              <img src={recipe.imageUrl} alt="recipe image" />
+            <li
+              key={recipe.recipeId}
+              onClick={() => handleRecipeClick(recipe.recipeId)}
+              className="recipe-item"
+            >
+              <img src={recipe.imageUrl} alt={`${recipe.name} image`} />
               <p>{recipe.name}</p>
             </li>
           ))

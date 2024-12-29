@@ -126,7 +126,7 @@ const JellyBeanList = ({ baseUrl }) => {
   };
 
   const handleBeanClick = (beanId) => {
-    navigate(`/bean/${beanId}`);
+    navigate(`/beans/${beanId}`);
   };
 
   const handleSearchSubmit = (e) => {

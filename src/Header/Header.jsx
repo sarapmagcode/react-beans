@@ -15,7 +15,7 @@ const Header = () => {
   };
 
   const goToRecipeList = () => {
-    navigate('/recipe-list');
+    navigate('/recipes');
   };
 
   return (

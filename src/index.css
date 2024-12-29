@@ -298,6 +298,110 @@ body, button, input {
     height: 70px;
 }
 
+/* ===================== Recipe Details ===================== */
+.recipe-details {
+	display: block;
+	width: 50%;
+	margin: 0 auto;
+	padding: 20px 0 40px 0;
+	line-height: 1.5;
+}
+
+.recipe-details header {
+  text-align: center;
+}
+
+.recipe-details header .recipe-image {
+  width: 100%;
+  height: 400px;
+  object-fit: contain;
+  background-color: #f0f0f0;
+  border-radius: 5px;
+}
+
+.recipe-details header h1 {
+  font-weight: 500;
+  font-size: 24px;
+}
+
+.recipe-details header .description {
+  color: #777777;
+  font-size: 16px;
+}
+
+.recipe-details header .cooking-details {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.recipe-details header .cooking-details div {
+  flex-basis: calc(100%/3);
+  flex-shrink: 1;
+  text-align: center;
+  margin: 20px 0;
+}
+
+.recipe-details header .cooking-details div .image-icon {
+  width: 25px;
+  height: 25px;
+  object-fit: cover;
+  object-position: center;
+}
+
+.recipe-details header .cooking-details div p:nth-of-type(1) {
+  font-size: 16px;
+  font-weight: 600;
+  color: #772877;
+}
+
+.recipe-details header .cooking-details div .actual-values {
+  font-size: 14px;
+  color: #777777;
+}
+
+.recipe-details .content h3 {
+  font-weight: 500;
+}
+
+.recipe-details .content hr {
+  margin: 10px 0;
+  border: 1px solid #ececec;
+}
+
+.recipe-details .content .ingredient-list,
+.recipe-details .content .additions-list {
+  padding: 0 25px;
+  line-height: 2;
+  font-weight: 300;
+}
+
+.recipe-details .content ul {
+  list-style-type: circle;
+}
+
+.recipe-details .content .directions {
+  font-weight: 300;
+}
+
+.recipe-details .content .tips h3 {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+}
+
+.recipe-details .content .tips h3 .image-icon {
+  width: 25px;
+  height: 25px;
+  object-fit: cover;
+  object-position: center;
+}
+
+.recipe-details .content .tips .content {
+  margin: 10px 0;
+  color: #777777;
+  font-weight: 400;
+}
 
 /* ===================== Animations ===================== */
 @keyframes pulse {

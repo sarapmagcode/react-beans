@@ -8,6 +8,7 @@ import Header from './Header/Header.jsx';
 import JellyBeanList from './JellyBeanList.jsx';
 import JellyBeanDetails from './JellyBeanDetails.jsx';
 import RecipeList from './RecipeList.jsx';
+import RecipeDetails from './RecipeDetails.jsx';
 
 const App = () => {
   const BASE_URL = 'https://jellybellywikiapi.onrender.com/api';
@@ -19,12 +20,16 @@ const App = () => {
       <Routes>
         <Route path="/" element={<JellyBeanList baseUrl={BASE_URL} />} />
         <Route
-          path="/bean/:id"
+          path="/beans/:id"
           element={<JellyBeanDetails baseUrl={BASE_URL} />}
         />
         <Route
-          path="/recipe-list"
+          path="/recipes"
           element={<RecipeList baseUrl={BASE_URL} />}
+        />
+        <Route
+          path="/recipes/:id"
+          element={<RecipeDetails baseUrl={BASE_URL} />}
         />
 
         {/* Catch-all route for 404 handling */}

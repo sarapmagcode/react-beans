@@ -120,8 +120,6 @@ const RecipeList = ({ baseUrl }) => {
     }
   };
 
-  // TODO: Recipe click redirect
-
   const handleRecipeClick = (recipeId) => {
     navigate(`/recipes/${recipeId}`);
   };

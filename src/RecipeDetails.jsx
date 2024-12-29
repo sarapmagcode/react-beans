@@ -2,6 +2,7 @@ import PropTypes from 'prop-types';
 import { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import { TimeIcon, BowlIcon, GroupIcon, BulbIcon } from './Icons';
+import RecipeSkeleton from './Recipe-Skeleton';
 
 const RecipeDetails = ({ baseUrl }) => {
   const { id } = useParams();
@@ -59,8 +60,8 @@ const RecipeDetails = ({ baseUrl }) => {
           <div className="content">
             <h3>Ingredients</h3>
             <ol className="ingredient-list">
-              {recipe.ingredients.map((ingredient) => (
-                <li>{ingredient}</li>
+              {recipe.ingredients.map((ingredient, index) => (
+                <li key={index}>{ingredient}</li>
               ))}
             </ol>
 
@@ -122,7 +123,7 @@ const RecipeDetails = ({ baseUrl }) => {
           </div>
         </>
       ) : (
-        <p>Failed to load recipe</p>
+        <RecipeSkeleton />
       )}
     </div>
   );
